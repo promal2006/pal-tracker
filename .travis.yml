@@ -24,6 +24,7 @@ jobs:
         file: "build/libs/pal-tracker.jar"
         skip_cleanup: true
     - stage: deploy to cf
+      if: branch = dev
       language: bash
       script:
         - echo "Downloading $RELEASE_TAG"
