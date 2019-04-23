@@ -13,7 +13,7 @@ jobs:
       language: java
       jdk: openjdk11
       install: skip
-      if: branch = dev
+      if: branch = master
       script: ./gradlew clean build
       before_deploy:
         - git config --local user.name "Travis CI"
