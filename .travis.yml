@@ -13,6 +13,7 @@ jobs:
       language: java
       jdk: openjdk11
       install: skip
+      if: branch = dev
       script: ./gradlew clean build
       before_deploy:
         - git config --local user.name "Travis CI"
@@ -24,7 +25,6 @@ jobs:
         file: "build/libs/pal-tracker.jar"
         skip_cleanup: true
     - stage: deploy to cf
-      if: branch = dev
       language: bash
       script:
         - echo "Downloading $RELEASE_TAG"
