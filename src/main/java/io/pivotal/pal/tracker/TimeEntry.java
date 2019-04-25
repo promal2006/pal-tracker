@@ -2,7 +2,6 @@ package io.pivotal.pal.tracker;
 
 import java.time.LocalDate;
 import java.util.Objects;
-import java.util.concurrent.atomic.AtomicLong;
 
 public class TimeEntry {
 
@@ -10,16 +9,16 @@ public class TimeEntry {
     private long projectId;
     private long userId;
     private LocalDate date;
-    private long hours;
+    private int hours;
 
-    public TimeEntry(long projectId, long userId, LocalDate date, long hours) {
+    public TimeEntry(long projectId, long userId, LocalDate date, int hours) {
         this.projectId = projectId;
         this.userId = userId;
         this.date = date;
         this.hours = hours;
     }
 
-    public TimeEntry(long timeEntryId, long projectId, long userId, LocalDate date, long hours) {
+    public TimeEntry(long timeEntryId, long projectId, long userId, LocalDate date, int hours) {
         this.timeEntryId = timeEntryId;
         this.projectId = projectId;
         this.userId = userId;
@@ -31,11 +30,11 @@ public class TimeEntry {
 
     }
 
-    public long getHours() {
+    public int getHours() {
         return this.hours;
     }
 
-    public void setHours(long hours) {
+    public void setHours(int hours) {
         this.hours = hours;
     }
 
